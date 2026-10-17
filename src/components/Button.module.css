@@ -1,0 +1,86 @@
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: 0.94rem;
+  font-weight: 650;
+  line-height: 1.1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.button:hover,
+.button[data-state="hover"] {
+  transform: translateY(-1px);
+}
+
+.button:active,
+.button[data-state="active"] {
+  transform: translateY(0);
+}
+
+.button svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+}
+
+.button[data-variant="primary"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.button[data-variant="primary"]:hover,
+.button[data-variant="primary"][data-state="hover"] {
+  background: var(--accent-strong);
+}
+
+.button[data-variant="secondary"] {
+  border-color: var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+}
+
+.button[data-variant="secondary"]:hover,
+.button[data-variant="secondary"][data-state="hover"] {
+  border-color: var(--ink);
+  background: color-mix(in oklch, var(--surface) 65%, transparent);
+}
+
+.button[data-state="focus"] {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.button:focus-visible {
+  border-radius: var(--radius-pill);
+}
+
+.button[data-size="small"] {
+  min-height: 42px;
+  padding: 0.65rem 1.05rem;
+  font-size: 0.875rem;
+}
+
+.button[data-size="large"] {
+  min-height: 52px;
+  padding: 0.95rem 1.5rem;
+  font-size: 1rem;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
