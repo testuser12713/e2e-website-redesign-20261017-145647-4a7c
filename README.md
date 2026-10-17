@@ -20,6 +20,10 @@ npm ci
 
 Ohne vorhandene `package-lock.json` installiert `npm install` dieselben Abhängigkeiten.
 
+## Dienste
+
+Das Produkt besteht aus dem einzigen Dienst **`web`** (`web-vite`, statisch) im Repository-Wurzelverzeichnis. Er liefert den gebauten Stand aus `dist/` unter `http://localhost:4173` aus und benötigt keine Umgebungsvariablen. Gestartet wird er in der Entwicklung mit `npm run dev` und für den Produktionsstand nach `npm run build` mit `npm run preview`; alternativ kann `dist/` mit jedem beliebigen statischen Webserver ausgeliefert werden.
+
 ## Entwicklung
 
 ```bash
