@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="equicrew">
+  <rect width="64" height="64" rx="14" fill="#0d211a"/>
+  <path d="M32 11.5 51 22v20L32 52.5 13 42V22L32 11.5Z" fill="none" stroke="#f4f7ee" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="m13 22 19 10.5L51 22M32 32.5v20" fill="none" stroke="#f4f7ee" stroke-opacity=".38" stroke-width="1.8"/>
+  <path d="m23.5 16.7 19 10.5v6.2" fill="none" stroke="#c9f47a" stroke-width="4" stroke-linecap="round"/>
+</svg>
