@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle ogDesc">
+  <title id="ogTitle">equicrew — smarte energie, fair verteilte KI</title>
+  <desc id="ogDesc">Tiefgrüner Hintergrund mit dem equi.cube als geschichteter Würfel und der Wortmarke equicrew.</desc>
+  <rect width="1200" height="630" fill="#0d211a"/>
+  <defs>
+    <pattern id="ogGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#f4f7ee" stroke-opacity=".06"/>
+    </pattern>
+    <radialGradient id="ogGlow" cx="0.76" cy="0.4" r="0.55">
+      <stop offset="0" stop-color="#c9f47a" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#c9f47a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogGrid)"/>
+  <rect width="1200" height="630" fill="url(#ogGlow)"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="72" y="235" fill="#f4f7ee" font-size="122" letter-spacing="-7">equicrew</text>
+    <text x="76" y="310" fill="#b8c9be" font-size="36">smarte energie, fair verteilte KI</text>
+  </g>
+  <g font-family="'SFMono-Regular', Consolas, monospace" font-size="16" letter-spacing="3" fill="#c9f47a">
+    <text x="76" y="526">DAS KERNPRODUKT</text>
+    <text x="76" y="558" fill="#f4f7ee" font-size="22" letter-spacing="1.5">equi.cube</text>
+    <text x="76" y="586" fill="#8fa398" font-size="15" letter-spacing="1">WÄRME · SPEICHER · PV · KI</text>
+  </g>
+  <g transform="translate(688 68)">
+    <ellipse cx="232" cy="482" rx="178" ry="24" fill="#07130f" opacity=".55"/>
+    <polygon points="232,34 460,148 232,262 4,148" fill="#c9f47a" stroke="#f4f7ee" stroke-opacity=".68" stroke-width="1.5"/>
+    <polygon points="4,148 232,262 232,314 4,200" fill="#8fc9e8"/>
+    <polygon points="460,148 232,262 232,314 460,200" fill="#8fc9e8"/>
+    <polygon points="4,200 232,314 232,366 4,252" fill="#63bd89"/>
+    <polygon points="460,200 232,314 232,366 460,252" fill="#63bd89"/>
+    <polygon points="4,252 232,366 232,482 4,368" fill="#ef9872"/>
+    <polygon points="460,252 232,366 232,482 460,368" fill="#ef9872"/>
+    <path d="M232 34 460 148v220L232 482 4 368V148L232 34ZM4 148l228 114 228-114M232 262v220" fill="none" stroke="#f4f7ee" stroke-opacity=".6" stroke-width="1.4" stroke-linejoin="round"/>
+    <path d="M120 92l228 114M344 92 120 206" fill="none" stroke="#0d211a" stroke-opacity=".18"/>
+  </g>
+</svg>
