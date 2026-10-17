@@ -123,15 +123,15 @@
 }
 
 .crewNodeHeat .crewNodeRing {
-  fill: oklch(94% 0.045 40);
+  fill: color-mix(in oklch, var(--heat) 18%, var(--surface));
 }
 
 .crewNodePv .crewNodeRing {
-  fill: oklch(94% 0.04 232);
+  fill: color-mix(in oklch, var(--pv) 22%, var(--surface));
 }
 
 .crewNodeBattery .crewNodeRing {
-  fill: oklch(94% 0.055 145);
+  fill: color-mix(in oklch, var(--battery) 20%, var(--surface));
 }
 
 .crewNodeInitials {
@@ -181,10 +181,26 @@
   gap: 1rem;
 }
 
+.teamItem {
+  display: flex;
+}
+
+.teamItem > * {
+  width: 100%;
+}
+
 .featureGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+.principleItem {
+  display: flex;
+}
+
+.principleItem > * {
+  width: 100%;
 }
 
 .principle {

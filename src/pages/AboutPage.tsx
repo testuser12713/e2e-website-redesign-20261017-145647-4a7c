@@ -23,18 +23,21 @@ function ArrowIcon() {
 
 const FOUNDERS = [
   {
+    id: "founder-michael",
     name: "Michael Hochstöger",
     role: "Founder",
     email: "michael.hochstoeger@equicrew.com",
     tone: "heat" as const,
   },
   {
+    id: "founder-christian-hinterdorfer",
     name: "Christian Hinterdorfer",
     role: "Founder",
     email: "christian.hinterdorfer@equicrew.com",
     tone: "pv" as const,
   },
   {
+    id: "founder-christian-hinterreiter",
     name: "Christian Hinterreiter",
     role: "Founder",
     email: "christian.hinterreiter@equicrew.com",
@@ -44,21 +47,25 @@ const FOUNDERS = [
 
 const PRINCIPLES = [
   {
+    id: "principle-heating",
     index: "01",
     title: "Heizsysteme ohne Kopfzerbrechen",
     text: "Ein System statt vieler Einzelentscheidungen: Wärme, Speicher und Energie greifen so ineinander, dass du dich nicht um jedes Gerät kümmern musst.",
   },
   {
+    id: "principle-ai",
     index: "02",
     title: "Grün und fair verteilte KI",
     text: "KI-Technologie braucht einen verantwortungsvollen Rahmen. Wir setzen sie für nachhaltige Energie und faire Chancen ein.",
   },
   {
+    id: "principle-together",
     index: "03",
     title: "Gemeinsam statt nebeneinander",
     text: "Eine Crew, abgestimmte Komponenten und ein offener Dialog mit Kundinnen und Kunden – so entsteht ein stimmiges Ganzes.",
   },
   {
+    id: "principle-next-generation",
     index: "04",
     title: "Verantwortung für morgen",
     text: "Wir entwickeln Produkte, die den nachfolgenden Generationen bestmögliche Chancen offenhalten – technisch und im Umgang mit Ressourcen.",
@@ -68,22 +75,26 @@ const PRINCIPLES = [
 export default function AboutPage() {
   return (
     <>
-      <Hero
-        eyebrow="Über die Crew"
-        headline="Jedes Schiff braucht eine Crew."
-        text="Gemeinsam gehen wir den Weg zu Heizsystemen ohne Kopfzerbrechen – und zu grüner, fair verteilter KI-Technologie. Drei Founder, ein Anspruch: Energie und KI so einzusetzen, dass sie für die nächste Generation Sinn ergeben."
-      >
-        <ButtonLink variant="primary" to="/kontakt" size="large">
-          Lern uns kennen
-          <ArrowIcon />
-        </ButtonLink>
-        <ButtonLink variant="secondary" to="/equicube" size="large">
-          Zum EquiCube
-        </ButtonLink>
-      </Hero>
+      <div data-od-id="about-hero">
+        <Hero
+          eyebrow="Über die Crew"
+          headline="Jedes Schiff braucht eine Crew."
+          text="Gemeinsam gehen wir den Weg zu Heizsystemen ohne Kopfzerbrechen – und zu grüner, fair verteilter KI-Technologie. Drei Founder, ein Anspruch: Energie und KI so einzusetzen, dass sie für die nächste Generation Sinn ergeben."
+        >
+          <div data-od-id="about-hero-cta">
+            <ButtonLink variant="primary" to="/kontakt" size="large">
+              Lern uns kennen
+              <ArrowIcon />
+            </ButtonLink>
+          </div>
+          <ButtonLink variant="secondary" to="/equicube" size="large">
+            Zum EquiCube
+          </ButtonLink>
+        </Hero>
+      </div>
 
       <Section id="about-mission">
-        <div className={styles.aboutGrid}>
+        <div className={styles.aboutGrid} data-od-id="about-mission">
           <div>
             <p className={styles.eyebrow}>Unser Antrieb</p>
             <h2 className={styles.quote}>smarte energie, fair verteilte KI.</h2>
@@ -123,8 +134,20 @@ export default function AboutPage() {
                 Hinterreiter sind über ein gemeinsames Zentrum miteinander
                 verbunden.
               </desc>
-              <ellipse className={styles.crewOrbit} cx="280" cy="260" rx="210" ry="170" />
-              <ellipse className={styles.crewOrbit} cx="280" cy="260" rx="150" ry="118" />
+              <ellipse
+                className={styles.crewOrbit}
+                cx="280"
+                cy="260"
+                rx="210"
+                ry="170"
+              />
+              <ellipse
+                className={styles.crewOrbit}
+                cx="280"
+                cy="260"
+                rx="150"
+                ry="118"
+              />
               <path className={styles.crewLink} d="M130 145 430 145 280 405Z" />
               <path
                 className={styles.crewLink}
@@ -172,57 +195,80 @@ export default function AboutPage() {
       </Section>
 
       <Section id="about-team">
-        <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>Die Founder</p>
-          <h2 id="about-team-title">Drei Perspektiven. Ein gemeinsamer Kurs.</h2>
-          <p className={styles.lead}>
-            Gebäudetechnik, Energie und digitale Systeme zusammenbringen – dafür
-            arbeitet die Crew täglich zusammen. Du erreichst uns direkt.
-          </p>
-        </div>
-        <div className={styles.teamGrid}>
-          {FOUNDERS.map((founder) => (
-            <TeamCard
-              key={founder.email}
-              name={founder.name}
-              role={founder.role}
-              email={founder.email}
-              tone={founder.tone}
-            />
-          ))}
+        <div data-od-id="about-team">
+          <div className={styles.sectionHeading}>
+            <p className={styles.eyebrow}>Die Founder</p>
+            <h2 id="about-team-title">
+              Drei Perspektiven. Ein gemeinsamer Kurs.
+            </h2>
+            <p className={styles.lead}>
+              Gebäudetechnik, Energie und digitale Systeme zusammenbringen –
+              dafür arbeitet die Crew täglich zusammen. Du erreichst uns direkt.
+            </p>
+          </div>
+          <div className={styles.teamGrid}>
+            {FOUNDERS.map((founder) => (
+              <div
+                key={founder.email}
+                className={styles.teamItem}
+                data-od-id={founder.id}
+              >
+                <TeamCard
+                  name={founder.name}
+                  role={founder.role}
+                  email={founder.email}
+                  tone={founder.tone}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
       <Section id="about-principles">
-        <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>Unser Weg</p>
-          <h2 id="about-principles-title">Woran wir uns orientieren.</h2>
-          <p className={styles.lead}>
-            Technik soll entlasten. Deshalb denken wir Systeme vom Alltag der
-            Menschen her – nicht von der Zahl der Einzelkomponenten.
-          </p>
-        </div>
-        <div className={styles.featureGrid}>
-          {PRINCIPLES.map((principle) => (
-            <Card key={principle.index}>
-              <div className={styles.principle}>
-                <span className={styles.principleIndex}>{principle.index}</span>
-                <h3 className={styles.principleTitle}>{principle.title}</h3>
-                <p className={styles.principleText}>{principle.text}</p>
+        <div data-od-id="about-principles">
+          <div className={styles.sectionHeading}>
+            <p className={styles.eyebrow}>Unser Weg</p>
+            <h2 id="about-principles-title">Woran wir uns orientieren.</h2>
+            <p className={styles.lead}>
+              Technik soll entlasten. Deshalb denken wir Systeme vom Alltag der
+              Menschen her – nicht von der Zahl der Einzelkomponenten.
+            </p>
+          </div>
+          <div className={styles.featureGrid}>
+            {PRINCIPLES.map((principle) => (
+              <div
+                key={principle.index}
+                className={styles.principleItem}
+                data-od-id={principle.id}
+              >
+                <Card>
+                  <div className={styles.principle}>
+                    <span className={styles.principleIndex}>
+                      {principle.index}
+                    </span>
+                    <h3 className={styles.principleTitle}>
+                      {principle.title}
+                    </h3>
+                    <p className={styles.principleText}>{principle.text}</p>
+                  </div>
+                </Card>
               </div>
-            </Card>
-          ))}
+            ))}
+          </div>
         </div>
       </Section>
 
       <Section id="about-cta">
-        <div className={styles.ctaInner}>
+        <div className={styles.ctaInner} data-od-id="about-cta">
           <div>
             <p className={styles.eyebrow}>Kontakt</p>
-            <h2 className={styles.ctaTitle}>Lass uns gemeinsam auf Kurs gehen.</h2>
+            <h2 className={styles.ctaTitle}>
+              Lass uns gemeinsam auf Kurs gehen.
+            </h2>
             <p className={styles.ctaText}>
-              Du hast Fragen zum EquiCube oder zu deinem Heizsystem? Wir hören zu
-              und melden uns persönlich bei dir.
+              Du hast Fragen zum EquiCube oder zu deinem Heizsystem? Wir hören
+              zu und melden uns persönlich bei dir.
             </p>
           </div>
           <div className={styles.ctaActions}>

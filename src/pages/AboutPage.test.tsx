@@ -52,6 +52,31 @@ describe("about page", () => {
 
   });
 
+  it("carries the region hooks of the approved screen", () => {
+    renderPage();
+
+    for (const region of [
+      "about-hero",
+      "about-hero-cta",
+      "about-mission",
+      "about-crew-graphic",
+      "about-team",
+      "founder-michael",
+      "founder-christian-hinterdorfer",
+      "founder-christian-hinterreiter",
+      "about-principles",
+      "principle-heating",
+      "principle-ai",
+      "principle-together",
+      "principle-next-generation",
+      "about-cta",
+    ]) {
+      expect(
+        document.querySelector(`[data-od-id="${region}"]`),
+      ).not.toBeNull();
+    }
+  });
+
   it("shows the principles section", () => {
     renderPage();
 
