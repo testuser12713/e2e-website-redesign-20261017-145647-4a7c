@@ -1,0 +1,31 @@
+.card {
+  counter-increment: feature-card;
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.index::before {
+  content: counter(feature-card, decimal-leading-zero);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+}
+
+.title {
+  max-width: 18ch;
+  font-size: 1.18rem;
+}
+
+.text {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}

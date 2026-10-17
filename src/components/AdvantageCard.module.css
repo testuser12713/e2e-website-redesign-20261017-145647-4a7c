@@ -1,0 +1,75 @@
+.card {
+  counter-increment: advantage-card;
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.index::before {
+  content: counter(advantage-card, decimal-leading-zero);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+}
+
+.title {
+  max-width: 18ch;
+  font-size: 1.14rem;
+}
+
+.text {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.card[data-featured="true"] {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  border-color: var(--deep);
+  background: var(--deep);
+  color: var(--on-deep);
+  --ink: var(--on-deep);
+  --muted: var(--on-deep-muted);
+  --line: oklch(100% 0 0 / 0.15);
+  --focus: var(--accent);
+}
+
+.card[data-featured="true"] .body {
+  display: grid;
+  align-content: end;
+  gap: 0.85rem;
+}
+
+.card[data-featured="true"] .title {
+  max-width: 14ch;
+  color: var(--on-deep);
+}
+
+.card[data-featured="true"] .index::before,
+.card[data-featured="true"] .text {
+  color: var(--on-deep-muted);
+}
+
+.stat {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 520px) {
+  .card[data-featured="true"] {
+    grid-template-columns: 1fr;
+  }
+}

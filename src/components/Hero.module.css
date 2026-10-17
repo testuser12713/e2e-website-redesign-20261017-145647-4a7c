@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--deep);
+  color: var(--on-deep);
+  --ink: var(--on-deep);
+  --ink-2: var(--on-deep);
+  --muted: var(--on-deep-muted);
+  --line: oklch(100% 0 0 / 0.15);
+  --line-strong: oklch(100% 0 0 / 0.3);
+  --link: var(--accent);
+  --focus: var(--accent);
+}
+
+.hero[data-layout="split"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, oklch(100% 0 0 / 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(100% 0 0 / 0.055) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: linear-gradient(to bottom, black, transparent 94%);
+  pointer-events: none;
+}
+
+.hero[data-layout="split"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle at 76% 34%,
+    oklch(86% 0.15 126 / 0.14),
+    transparent 44%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  display: grid;
+  align-items: center;
+  gap: 3rem;
+  padding-block: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 4vw, 3rem);
+}
+
+.hero[data-layout="split"] .inner {
+  padding-block: clamp(3.5rem, 8vw, 7rem);
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--on-deep-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+.title {
+  max-width: 15ch;
+  margin-top: 1rem;
+}
+
+.hero[data-layout="split"] .title {
+  max-width: 16ch;
+  color: var(--on-deep);
+  font-size: clamp(3.2rem, 8.5vw, 7.4rem);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+
+.text {
+  max-width: 54ch;
+  margin-top: 1.2rem;
+  color: var(--on-deep-muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+  line-height: 1.65;
+}
+
+.hero[data-layout="split"] .text {
+  margin-top: 1.6rem;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.visual {
+  position: relative;
+  min-width: 0;
+}
+
+@media (min-width: 860px) {
+  .hero[data-layout="split"] .inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+}
