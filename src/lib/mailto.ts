@@ -8,6 +8,20 @@ export type ContactFormValues = {
 };
 
 export function buildMailto(values: ContactFormValues): string {
-  void values;
-  return "";
+  const firstName = values.firstName.trim();
+  const lastName = values.lastName.trim();
+  const email = values.email.trim();
+  const message = values.message.trim();
+
+  const subject = `Kontaktanfrage von ${firstName} ${lastName}`;
+  const body = [
+    `Name: ${firstName} ${lastName}`,
+    `E-Mail: ${email}`,
+    "",
+    message,
+  ].join("\n");
+
+  return `mailto:${CONTACT_RECIPIENT}?subject=${encodeURIComponent(
+    subject,
+  )}&body=${encodeURIComponent(body)}`;
 }
