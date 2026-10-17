@@ -1,0 +1,292 @@
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+.lead {
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+  line-height: 1.65;
+}
+
+.sectionHeading {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 760px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.sectionHeading h2 {
+  max-width: 18ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--link);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.textLink svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.18s ease;
+}
+
+.textLink:hover {
+  text-decoration: underline;
+}
+
+.textLink:hover svg {
+  transform: translateX(2px);
+}
+
+.aboutGrid {
+  display: grid;
+  align-items: center;
+  gap: 3rem;
+}
+
+.quote {
+  max-width: 34ch;
+  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.missionCopy p {
+  max-width: 48ch;
+  margin-top: 1.25rem;
+  color: var(--muted);
+}
+
+.crewGraphic {
+  min-width: 0;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.crewGraphic svg {
+  width: 100%;
+  height: auto;
+}
+
+.crewOrbit {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  stroke-dasharray: 4 7;
+}
+
+.crewLink {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+
+.crewNodeRing {
+  fill: var(--surface-2);
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.crewNodeHeat .crewNodeRing {
+  fill: oklch(94% 0.045 40);
+}
+
+.crewNodePv .crewNodeRing {
+  fill: oklch(94% 0.04 232);
+}
+
+.crewNodeBattery .crewNodeRing {
+  fill: oklch(94% 0.055 145);
+}
+
+.crewNodeInitials {
+  fill: var(--deep);
+  font-family: var(--font-display);
+  font-size: 30px;
+  text-anchor: middle;
+}
+
+.crewNodeLabel {
+  fill: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  text-anchor: middle;
+  text-transform: uppercase;
+}
+
+.crewCenter {
+  fill: var(--deep);
+}
+
+.crewCenterMark {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.visualCaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.principle {
+  display: flex;
+  height: 100%;
+  min-height: 190px;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.principleIndex {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+}
+
+.principleTitle {
+  max-width: 18ch;
+  font-size: 1.18rem;
+}
+
+.principleText {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+:global(#about-team) {
+  background: var(--surface-2);
+}
+
+:global(#about-cta) {
+  background: var(--deep);
+  color: var(--on-deep);
+  --ink: var(--on-deep);
+  --ink-2: var(--on-deep);
+  --muted: var(--on-deep-muted);
+  --line: oklch(100% 0 0 / 0.15);
+  --line-strong: oklch(100% 0 0 / 0.3);
+  --link: var(--accent);
+  --focus: var(--accent);
+}
+
+.ctaInner {
+  position: relative;
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ctaTitle {
+  max-width: 15ch;
+  margin-top: 1rem;
+  font-size: var(--step-5);
+}
+
+.ctaText {
+  max-width: 52ch;
+  margin-top: 1rem;
+  color: var(--on-deep-muted);
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 700px) {
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 860px) {
+  .aboutGrid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+
+  .ctaInner {
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .featureGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
